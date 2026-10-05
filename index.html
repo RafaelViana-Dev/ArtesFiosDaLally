@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artes & Fios da Lally — Amigurumis e Peças Sacras Feitas à Mão</title>
+  <meta name="description" content="Santinhos devocionais, naninhas de transição e peças infantis delicadas feitas 100% à mão com amor e fé. Encomende no WhatsApp." />
+
+  <!-- ======================================================================
+       FONTES TIPOGRÁFICAS (Google Fonts fiéis ao Figma)
+       - Quicksand: Títulos e destaques acolhedores
+       - Plus Jakarta Sans: Textos de corpo e legendas
+       - Nunito Sans: Botões, badges e chamadas em caixa alta
+       ====================================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ======================================================================
+       TAILWIND CSS (Configurado com as variáveis e paleta do Figma)
+       ====================================================================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lally-malva': '#944265',      // Malva Artesanal (Cor primária dos destaques e botões de catálogo)
+            'lally-rosa': '#F8EDF2',       // Rosa Rubor (Fundo do anúncio e badges suaves)
+            'lally-algodao': '#FAF6F8',    // Algodão Quente (Fundo da seção hero e cards secundários)
+            'lally-fundo': '#FBF9F6',      // Fundo padrão claro da página
+            'lally-grafite': '#2F262B',    // Grafite Ameixa (Texto principal escuro)
+            'lally-muted': '#5956E2',      // Tom de apoio / subtítulos
+            'lally-roxo': '#7C46A1',       // Destaque roxo espiritual
+            'lally-roxo-claro': '#F4DAFF', // Fundo de ícones e glow
+            'lally-whatsapp': '#20AC58',   // Verde Herbal oficial de conversão
+            'lally-footer': '#362745'      // Ameixa profundo do rodapé
+          },
+          fontFamily: {
+            quicksand: ['Quicksand', 'sans-serif'],
+            jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+            nunito: ['Nunito Sans', 'sans-serif']
+          },
+          boxShadow: {
+            'soft': '0px 5px 18px 0px rgba(59, 51, 59, 0.07)',
+            'card': '0px 10px 26px 0px rgba(106, 58, 129, 0.12)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos complementares personalizados -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Biblioteca de Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-lally-fundo text-lally-grafite font-jakarta antialiased">
+
+  <!-- ======================================================================
+       1. FAIXA DE ANÚNCIO (TOPO)
+       ====================================================================== -->
+  <div class="bg-lally-rosa border-b border-[#EAE3E8] py-2 px-4 text-center">
+    <div class="max-w-4xl mx-auto flex items-center justify-center gap-2 text-lally-malva font-nunito font-bold text-[11px] sm:text-xs">
+      <i data-lucide="heart" class="w-3.5 h-3.5 fill-lally-malva shrink-0"></i>
+      <span>Encomendas personalizadas • envio para todo o Brasil • 100% feito à mão</span>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       2. CABEÇALHO & NAVEGAÇÃO RESPONSIVA
+       ====================================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#EAE3E8]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGOTIPO / IDENTIDADE -->
+      <a href="#" class="flex items-center gap-3 group" aria-label="Página Inicial Artes & Fios da Lally">
+        <div class="w-10 h-10 rounded-full bg-lally-rosa flex items-center justify-center text-lally-malva font-quicksand font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+          ✨
+        </div>
+        <div>
+          <span class="block font-quicksand font-bold text-lg leading-tight text-lally-grafite group-hover:text-lally-malva transition-colors">
+            Artes & Fios
+          </span>
+          <span class="block font-nunito font-bold text-[10px] tracking-widest uppercase text-lally-malva">
+            da Lally
+          </span>
+        </div>
+      </a>
+
+      <!-- MENU DESKTOP -->
+      <nav class="hidden md:flex items-center gap-8 font-nunito text-sm font-semibold text-gray-700">
+        <a href="#diferenciais" class="hover:text-lally-malva transition-colors">Diferenciais</a>
+        <a href="#catalogo" class="hover:text-lally-malva transition-colors">Catálogo</a>
+        <a href="#como-funciona" class="hover:text-lally-malva transition-colors">Como Funciona</a>
+        <a href="#sobre" class="hover:text-lally-malva transition-colors">Sobre a Artesã</a>
+        <a href="#depoimentos" class="hover:text-lally-malva transition-colors">Depoimentos</a>
+        <a href="#faq" class="hover:text-lally-malva transition-colors">Dúvidas</a>
+      </nav>
+
+      <!-- BOTÃO DIREITO / MENU MOBILE -->
+      <div class="flex items-center gap-3">
+        <!-- CTA WhatsApp Desktop -->
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-xs uppercase px-4 py-2.5 rounded-full transition-all shadow-sm">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Falar no WhatsApp</span>
+        </a>
+
+        <!-- Botão Menu Mobile (Hambúrguer) -->
+        <button id="mobile-menu-btn" class="md:hidden w-11 h-11 rounded-full bg-lally-rosa flex items-center justify-center text-lally-malva focus:outline-none focus:ring-2 focus:ring-lally-malva transition-all" aria-label="Abrir Menu de Navegação">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MENU DROPDOWN MOBILE -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-[#EAE3E8] px-6 py-5 space-y-3 font-nunito font-semibold text-sm shadow-xl">
+      <a href="#diferenciais" class="mobile-nav-link block py-2 border-b border-gray-100 text-gray-700 hover:text-lally-malva">Diferenciais e Cuidados</a>
+      <a href="#catalogo" class="mobile-nav-link block py-2 border-b border-gray-100 text-gray-700 hover:text-lally-malva">Catálogo em Destaque</a>
+      <a href="#como-funciona" class="mobile-nav-link block py-2 border-b border-gray-100 text-gray-700 hover:text-lally-malva">Como Funciona a Encomenda</a>
+      <a href="#sobre" class="mobile-nav-link block py-2 border-b border-gray-100 text-gray-700 hover:text-lally-malva">Sobre a Artesã</a>
+      <a href="#depoimentos" class="mobile-nav-link block py-2 border-b border-gray-100 text-gray-700 hover:text-lally-malva">Depoimentos</a>
+      <a href="#faq" class="mobile-nav-link block py-2 border-b border-gray-100 text-gray-700 hover:text-lally-malva">Perguntas Frequentes</a>
+      <div class="pt-2">
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-xs uppercase py-3 rounded-full shadow-md">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Conversar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       3. HERO SECTION (APRESENTAÇÃO PRINCIPAL)
+       ====================================================================== -->
+  <section class="relative bg-lally-algodao py-12 md:py-20 overflow-hidden border-b border-[#EAE3E8]">
+    <!-- Efeito luminoso suave no fundo -->
+    <div class="absolute -left-20 top-12 w-80 h-80 bg-lally-roxo-claro/30 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+      
+      <!-- COLUNA ESQUERDA: TEXTOS E CHAMADAS -->
+      <div class="space-y-6 text-left">
+        <!-- Badge Ateliê -->
+        <div class="inline-flex items-center gap-2 bg-lally-rosa text-lally-malva px-3 py-1.5 rounded-full text-xs font-nunito font-bold">
+          <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i>
+          <span>Ateliê afetivo e devocional</span>
+        </div>
+
+        <!-- Título Principal -->
+        <h1 class="font-quicksand font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-lally-grafite">
+          Amigurumis e peças sacras tecidas ponto a ponto com <span class="text-lally-roxo font-bold">amor e fé.</span>
+        </h1>
+
+        <!-- Descrição de Apoio -->
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">
+          Santinhos devocionais, naninhas de transição e peças infantis delicadas, tecidas pacientemente à mão para acolher memórias em família e presentear momentos inesquecíveis.
+        </p>
+
+        <!-- Botões de Ação do Hero -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="#catalogo" class="inline-flex items-center justify-center gap-2 bg-lally-malva hover:bg-[#803856] text-white font-nunito font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full transition-all shadow-md">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Ver Modelos e Coleções</span>
+          </a>
+          <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Gostaria%20de%20fazer%20uma%20encomenda." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full transition-all shadow-md">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Conversar no WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Notas de Envio e Prazo -->
+        <div class="flex flex-wrap items-center gap-6 pt-4 border-t border-gray-200/70 text-xs text-gray-500 font-jakarta">
+          <div class="flex items-center gap-2">
+            <i data-lucide="truck" class="w-4 h-4 text-lally-malva"></i>
+            <span>Envio para todo o Brasil</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="clock" class="w-4 h-4 text-lally-malva"></i>
+            <span>Feito sob encomenda</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUNA DIREITA: COMPOSIÇÃO DE IMAGENS DO DESIGN FIGMA -->
+      <div class="relative flex justify-center items-center min-h-[380px] sm:min-h-[420px]">
+        
+        <!-- CARD FUNDO: SANTINHA HERO -->
+        <div class="absolute right-2 sm:right-6 top-2 w-48 sm:w-56 rounded-2xl overflow-hidden shadow-card border border-white/80 bg-white">
+          <img src="assets/images/hero_santa.png" alt="Santinha devocional em crochê" class="w-full h-auto object-cover rounded-2xl" loading="eager" />
+        </div>
+
+        <!-- CARD FRENTE: POLAROID NANINHA -->
+        <div class="relative z-10 left-[-16px] sm:left-[-32px] top-6 bg-white p-3.5 rounded-2xl shadow-xl border border-gray-100 max-w-[240px] sm:max-w-[270px] transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-pink-50">
+            <img src="assets/images/hero_naninha.png" alt="Naninha Ovelhinha feita à mão" class="w-full h-full object-cover" loading="eager" />
+          </div>
+          <div class="mt-3">
+            <h3 class="font-quicksand font-bold text-sm text-lally-grafite">Naninha Ovelhinha</h3>
+            <p class="text-[10px] text-gray-500 font-jakarta">100% feita à mão • fio nobre e macio</p>
+          </div>
+        </div>
+
+        <!-- SELO FLUTUANTE FEITO À MÃO -->
+        <div class="absolute bottom-2 right-4 sm:right-10 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-gray-100 flex items-center gap-2 pulse-badge">
+          <i data-lucide="sparkles" class="w-4 h-4 text-lally-malva"></i>
+          <span class="font-nunito font-bold text-xs text-lally-grafite">100% Feito à Mão</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. SEÇÃO: DIFERENCIAIS E CUIDADOS
+       ====================================================================== -->
+  <section id="diferenciais" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Cabeçalho da Seção -->
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-lally-malva font-nunito font-bold text-xs uppercase tracking-wider block">
+          Amor em cada detalhe
+        </span>
+        <h2 class="font-quicksand font-bold text-2xl sm:text-3xl text-lally-grafite">
+          Feito com o carinho e a segurança que sua família merece
+        </h2>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Do primeiro ponto ao laço da embalagem, cada amigurumi recebe cuidados pensados para a pele delicada dos pequenos e a preservação da fé.
+        </p>
+      </div>
+
+      <!-- Grade de Benefícios (4 Colunas no Desktop, 2 no Tablet, 1 no Mobile) -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- CARD 1: FIOS NOBRES -->
+        <div class="bg-lally-algodao p-6 rounded-2xl shadow-soft border border-gray-100 space-y-3 card-hover">
+          <div class="w-11 h-11 rounded-xl bg-lally-roxo-claro flex items-center justify-center text-lally-roxo">
+            <i data-lucide="flower-2" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-quicksand font-bold text-base text-lally-grafite">Fios Nobres</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Fios mercerizados, macios e hipoalergênicos, escolhidos para o contato com a pele delicada.
+          </p>
+        </div>
+
+        <!-- CARD 2: TRAVAS DE SEGURANÇA -->
+        <div class="bg-lally-algodao p-6 rounded-2xl shadow-soft border border-gray-100 space-y-3 card-hover">
+          <div class="w-11 h-11 rounded-xl bg-pink-100 flex items-center justify-center text-pink-600">
+            <i data-lucide="lock" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-quicksand font-bold text-base text-lally-grafite">Travas de Segurança</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Olhinhos e focinhos aplicados com trava interna, seguros e resistentes ao uso diário.
+          </p>
+        </div>
+
+        <!-- CARD 3: CORES SOB MEDIDA -->
+        <div class="bg-lally-algodao p-6 rounded-2xl shadow-soft border border-gray-100 space-y-3 card-hover">
+          <div class="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600">
+            <i data-lucide="palette" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-quicksand font-bold text-base text-lally-grafite">Cores Sob Medida</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Adaptamos a paleta de mantas, roupinhas e detalhes para combinar com o seu sonho.
+          </p>
+        </div>
+
+        <!-- CARD 4: CHEIRINHO AFETIVO -->
+        <div class="bg-lally-algodao p-6 rounded-2xl shadow-soft border border-gray-100 space-y-3 card-hover">
+          <div class="w-11 h-11 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600">
+            <i data-lucide="heart" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-quicksand font-bold text-base text-lally-grafite">Cheirinho Afetivo</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Cada peça vai perfumada com delicadeza, embalada para presentear e celebrar.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. SEÇÃO: CATÁLOGO DIGITAL EM DESTAQUE (COM IMAGENS REAIS E FILTROS)
+       ====================================================================== -->
+  <section id="catalogo" class="py-16 md:py-24 bg-lally-fundo border-t border-b border-gray-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Cabeçalho do Catálogo -->
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-lally-malva font-nunito font-bold text-xs uppercase tracking-wider block">
+          Catálogo afetivo
+        </span>
+        <h2 class="font-quicksand font-bold text-2xl sm:text-3xl text-lally-grafite">
+          Modelos em destaque
+        </h2>
+        <p class="text-gray-600 text-sm">
+          Clique no botão de qualquer peça para abrir uma conversa direta comigo no WhatsApp — o orçamento é feito com carinho e sem compromisso.
+        </p>
+      </div>
+
+      <!-- FILTROS DE CATEGORIA INTERATIVOS -->
+      <div class="flex flex-wrap items-center justify-center gap-2" role="tablist" aria-label="Filtrar modelos por categoria">
+        <button class="filter-btn active bg-lally-malva text-white border-lally-malva px-4 py-2 rounded-full font-nunito font-bold text-xs transition-all border shadow-sm" data-category="all" aria-pressed="true">
+          Todos os Modelos
+        </button>
+        <button class="filter-btn bg-white text-gray-600 border-gray-200 px-4 py-2 rounded-full font-nunito font-bold text-xs hover:border-lally-malva transition-all border" data-category="sacra" aria-pressed="false">
+          Linha Sacra
+        </button>
+        <button class="filter-btn bg-white text-gray-600 border-gray-200 px-4 py-2 rounded-full font-nunito font-bold text-xs hover:border-lally-malva transition-all border" data-category="baby" aria-pressed="false">
+          Bebês & Naninhas
+        </button>
+        <button class="filter-btn bg-white text-gray-600 border-gray-200 px-4 py-2 rounded-full font-nunito font-bold text-xs hover:border-lally-malva transition-all border" data-category="presentes" aria-pressed="false">
+          Presentes Especiais
+        </button>
+      </div>
+
+      <!-- GRADE DE PRODUTOS (6 PRODUTOS DO FIGMA) -->
+      <div id="products-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- PRODUTO 1: NOSSA SENHORA DE FÁTIMA -->
+        <article class="product-card bg-white rounded-2xl overflow-hidden shadow-soft border border-gray-100 card-hover flex flex-col justify-between" data-category="sacra">
+          <div class="relative bg-[#FBF9F6] h-72 overflow-hidden flex items-center justify-center">
+            <img src="assets/images/ns_fatima.png" alt="Nossa Senhora de Fátima em Crochê" class="w-full h-full object-cover" loading="lazy" />
+            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-nunito font-bold text-lally-malva uppercase shadow-sm">
+              São Devocional
+            </span>
+          </div>
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-nunito font-bold uppercase text-lally-malva">Coleção Sacra</span>
+              <h3 class="font-quicksand font-bold text-xl text-lally-grafite mt-1">Nossa Senhora de Fátima em Crochê</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Manto bordado à mão, terço delicado e acabamento sereno para um presente cheio de significado.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-gray-400 block font-jakarta">A partir de</span>
+                <span class="font-quicksand font-bold text-xl text-lally-malva">R$ 155,00</span>
+              </div>
+              <span class="text-[10px] text-gray-500 font-jakarta">Prazo: ~15 dias</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Gostaria%20de%20encomendar%20a%20Nossa%20Senhora%20de%20F%C3%A1tima%20em%20Croch%C3%AA." target="_blank" rel="noopener noreferrer" class="w-full bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-xs uppercase py-3 rounded-full text-center flex items-center justify-center gap-2 transition-all shadow-sm">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Encomendar no WhatsApp</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 2: NANINHA OVELHINHA -->
+        <article class="product-card bg-white rounded-2xl overflow-hidden shadow-soft border border-gray-100 card-hover flex flex-col justify-between" data-category="baby">
+          <div class="relative bg-[#FBF9F6] h-72 overflow-hidden flex items-center justify-center">
+            <img src="assets/images/naninha_ovelhinha.png" alt="Naninha Ovelhinha de Aconchego" class="w-full h-full object-cover" loading="lazy" />
+            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-nunito font-bold text-emerald-600 uppercase shadow-sm">
+              Pronta Entrega
+            </span>
+          </div>
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-nunito font-bold uppercase text-lally-malva">Linha Baby</span>
+              <h3 class="font-quicksand font-bold text-xl text-lally-grafite mt-1">Naninha Ovelhinha de Aconchego</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Ovelhinha macia com manta em ponto texturizado, perfeita para acolher o sono e acompanhar os primeiros anos.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-gray-400 block font-jakarta">A partir de</span>
+                <span class="font-quicksand font-bold text-xl text-lally-malva">R$ 110,00</span>
+              </div>
+              <span class="text-[10px] text-emerald-600 font-semibold font-jakarta">1 peça pronta</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Tenho%20interesse%20na%20Naninha%20Ovelhinha%20em%20Pronta%20Entrega." target="_blank" rel="noopener noreferrer" class="w-full bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-xs uppercase py-3 rounded-full text-center flex items-center justify-center gap-2 transition-all shadow-sm">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Encomendar no WhatsApp</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 3: NOSSA SENHORA APARECIDA BABY -->
+        <article class="product-card bg-white rounded-2xl overflow-hidden shadow-soft border border-gray-100 card-hover flex flex-col justify-between" data-category="sacra">
+          <div class="relative bg-[#FBF9F6] h-72 overflow-hidden flex items-center justify-center">
+            <img src="assets/images/ns_aparecida_baby.png" alt="Nossa Senhora Aparecida Baby" class="w-full h-full object-cover" loading="lazy" />
+            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-nunito font-bold text-lally-malva uppercase shadow-sm">
+              São Devocional
+            </span>
+          </div>
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-nunito font-bold uppercase text-lally-malva">Coleção Sacra</span>
+              <h3 class="font-quicksand font-bold text-xl text-lally-grafite mt-1">Nossa Senhora Aparecida Baby</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Versão baby em fios nobres, com manto azul-marinho bordado e detalhes dourados feitos ponto a ponto.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-gray-400 block font-jakarta">A partir de</span>
+                <span class="font-quicksand font-bold text-xl text-lally-malva">R$ 130,00</span>
+              </div>
+              <span class="text-[10px] text-gray-500 font-jakarta">Prazo: ~12 dias</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Quero%20encomendar%20a%20Nossa%20Senhora%20Aparecida%20Baby." target="_blank" rel="noopener noreferrer" class="w-full bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-xs uppercase py-3 rounded-full text-center flex items-center justify-center gap-2 transition-all shadow-sm">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Encomendar no WhatsApp</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 4: URSINHO TEDDY COM JARDINEIRA -->
+        <article class="product-card bg-white rounded-2xl overflow-hidden shadow-soft border border-gray-100 card-hover flex flex-col justify-between" data-category="presentes">
+          <div class="relative bg-[#FBF9F6] h-72 overflow-hidden flex items-center justify-center">
+            <img src="assets/images/ursinho_teddy.png" alt="Ursinho Teddy com Jardineira" class="w-full h-full object-cover" loading="lazy" />
+            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-nunito font-bold text-lally-malva uppercase shadow-sm">
+              Sob Encomenda
+            </span>
+          </div>
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-nunito font-bold uppercase text-lally-malva">Presentes Especiais</span>
+              <h3 class="font-quicksand font-bold text-xl text-lally-grafite mt-1">Ursinho Teddy com Jardineira</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Ursinho retrô com jardineira removível e detalhes seguros, um companheiro carinhoso para todas as idades.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-gray-400 block font-jakarta">A partir de</span>
+                <span class="font-quicksand font-bold text-xl text-lally-malva">R$ 145,00</span>
+              </div>
+              <span class="text-[10px] text-gray-500 font-jakarta">Prazo: ~15 dias</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Gostaria%20de%20encomendar%20o%20Ursinho%20Teddy%20com%20Jardineira." target="_blank" rel="noopener noreferrer" class="w-full bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-xs uppercase py-3 rounded-full text-center flex items-center justify-center gap-2 transition-all shadow-sm">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Encomendar no WhatsApp</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 5: SÃO JOSÉ DORMINDO -->
+        <article class="product-card bg-white rounded-2xl overflow-hidden shadow-soft border border-gray-100 card-hover flex flex-col justify-between" data-category="sacra">
+          <div class="relative bg-[#FBF9F6] h-72 overflow-hidden flex items-center justify-center">
+            <img src="assets/images/sao_jose_dormindo.png" alt="São José Dormindo em Crochê" class="w-full h-full object-cover" loading="lazy" />
+            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-nunito font-bold text-lally-malva uppercase shadow-sm">
+              São Devocional
+            </span>
+          </div>
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-nunito font-bold uppercase text-lally-malva">Coleção Sacra</span>
+              <h3 class="font-quicksand font-bold text-xl text-lally-grafite mt-1">São José Dormindo</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Inspirado na devoção do Papa Francisco, repousa sobre uma almofada macia e acolhe pedidos e intenções.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-gray-400 block font-jakarta">A partir de</span>
+                <span class="font-quicksand font-bold text-xl text-lally-malva">R$ 135,00</span>
+              </div>
+              <span class="text-[10px] text-gray-500 font-jakarta">Prazo: ~15 dias</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Gostaria%20de%20encomendar%20o%20S%C3%A3o%20Jos%C3%A9%20Dormindo." target="_blank" rel="noopener noreferrer" class="w-full bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-xs uppercase py-3 rounded-full text-center flex items-center justify-center gap-2 transition-all shadow-sm">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Encomendar no WhatsApp</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 6: MÓBILE JARDIM ENCANTADO -->
+        <article class="product-card bg-white rounded-2xl overflow-hidden shadow-soft border border-gray-100 card-hover flex flex-col justify-between" data-category="baby">
+          <div class="relative bg-[#FBF9F6] h-72 overflow-hidden flex items-center justify-center">
+            <img src="assets/images/mobile_jardim.png" alt="Móbile Jardim Encantado" class="w-full h-full object-cover" loading="lazy" />
+            <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-nunito font-bold text-lally-malva uppercase shadow-sm">
+              Sob Encomenda
+            </span>
+          </div>
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-nunito font-bold uppercase text-lally-malva">Linha Baby</span>
+              <h3 class="font-quicksand font-bold text-xl text-lally-grafite mt-1">Móbile Jardim Encantado</h3>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Flores, nuvens e folhinhas em crochê dançam suavemente sobre o berço em uma composição personalizada.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-gray-400 block font-jakarta">A partir de</span>
+                <span class="font-quicksand font-bold text-xl text-lally-malva">R$ 180,00</span>
+              </div>
+              <span class="text-[10px] text-gray-500 font-jakarta">Prazo: ~20 dias</span>
+            </div>
+            <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Quero%20personalizar%20um%20M%C3%B3bile%20Jardim%20Encantado." target="_blank" rel="noopener noreferrer" class="w-full bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-xs uppercase py-3 rounded-full text-center flex items-center justify-center gap-2 transition-all shadow-sm">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Encomendar no WhatsApp</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- BANNER DE ENCOMENDA PERSONALIZADA / EXCLUSIVA -->
+      <div class="bg-gradient-to-r from-lally-roxo-claro to-pink-100 p-8 sm:p-10 rounded-3xl shadow-soft border border-purple-100 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="text-lally-malva font-nunito font-bold text-xs uppercase tracking-wider block">
+            Encomenda sob medida
+          </span>
+          <h3 class="font-quicksand font-bold text-2xl text-lally-grafite">
+            Não achou o santo ou bichinho que procura?
+          </h3>
+          <p class="text-gray-600 text-sm max-w-xl">
+            Posso confeccionar um modelo especial ou adaptar uma peça com as cores e detalhes que você imaginou.
+          </p>
+        </div>
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Gostaria%20de%20criar%20uma%20pe%C3%A7a%20exclusiva%20personalizada." target="_blank" rel="noopener noreferrer" class="whitespace-nowrap bg-lally-roxo hover:bg-purple-800 text-white font-nunito font-bold text-xs uppercase px-6 py-3.5 rounded-full transition-all flex items-center gap-2 shadow-md shrink-0">
+          <i data-lucide="wand-2" class="w-4 h-4"></i>
+          <span>Criar Peça Exclusiva</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. SEÇÃO: COMO FUNCIONA A ENCOMENDA
+       ====================================================================== -->
+  <section id="como-funciona" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Cabeçalho -->
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-lally-malva font-nunito font-bold text-xs uppercase tracking-wider block">
+          Simples e acolhedor
+        </span>
+        <h2 class="font-quicksand font-bold text-2xl sm:text-3xl text-lally-grafite">
+          Como Funciona a sua Encomenda
+        </h2>
+        <p class="text-gray-600 text-sm">
+          Sem burocracia nem carrinho de compras frio. Aqui cada peça nasce de uma conversa feita com afeto.
+        </p>
+      </div>
+
+      <!-- PASSO A PASSO (3 ETAPAS NUMERADAS) -->
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- PASSO 1 -->
+        <div class="bg-lally-algodao p-8 rounded-3xl border border-gray-100 space-y-4 shadow-soft card-hover">
+          <div class="w-12 h-12 rounded-full bg-[#F3B4CB] text-lally-grafite font-quicksand font-bold text-xl flex items-center justify-center shadow-sm">
+            1
+          </div>
+          <h3 class="font-quicksand font-bold text-xl text-lally-grafite">Escolha o seu Modelo</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Navegue pelos modelos do catálogo e clique no botão de WhatsApp da peça que tocou seu coração.
+          </p>
+        </div>
+
+        <!-- PASSO 2 -->
+        <div class="bg-lally-algodao p-8 rounded-3xl border border-gray-100 space-y-4 shadow-soft card-hover">
+          <div class="w-12 h-12 rounded-full bg-lally-roxo text-white font-quicksand font-bold text-xl flex items-center justify-center shadow-sm">
+            2
+          </div>
+          <h3 class="font-quicksand font-bold text-xl text-lally-grafite">Combinamos os Detalhes</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            No WhatsApp alinhamos cores, tamanhos, acessórios, nome da criança e cada detalhe especial.
+          </p>
+        </div>
+
+        <!-- PASSO 3 -->
+        <div class="bg-lally-algodao p-8 rounded-3xl border border-gray-100 space-y-4 shadow-soft card-hover">
+          <div class="w-12 h-12 rounded-full bg-[#E98BB2] text-white font-quicksand font-bold text-xl flex items-center justify-center shadow-sm">
+            3
+          </div>
+          <h3 class="font-quicksand font-bold text-xl text-lally-grafite">Confecção e Envio Seguro</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Teço cada ponto à mão, envio fotos do resultado antes de postar e despacho com embalagem perfumada.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- NOTA DE SEGURANÇA E PAGAMENTO -->
+      <div class="bg-gray-100/80 p-4 rounded-full max-w-xl mx-auto text-center text-xs text-gray-600 flex items-center justify-center gap-2 border border-gray-200">
+        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+        <span>Pagamento facilitado via Pix ou cartão de crédito. Combinamos tudo antes da confecção.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. SEÇÃO: SOBRE A ARTESÃ (LALLY NO ATELIÊ)
+       ====================================================================== -->
+  <section id="sobre" class="py-16 md:py-24 bg-lally-fundo border-t border-gray-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+      
+      <!-- FOTO REAL DA ARTESÃ NO ATELIÊ -->
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-card border-4 border-white bg-white">
+          <img src="assets/images/lally_artesa.png" alt="Lally Karina, artesã e fundadora do ateliê" class="w-full h-auto object-cover max-h-[520px]" loading="lazy" />
+        </div>
+
+        <!-- CITAÇÃO AFETIVA FLUTUANTE -->
+        <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-gray-100 space-y-1">
+          <p class="font-quicksand font-bold text-xs sm:text-sm text-lally-grafite">
+            “Cada ponto é uma prece de amor pela sua família.”
+          </p>
+          <span class="block text-[10px] text-lally-malva font-nunito font-bold uppercase">
+            Lally Karina — Artesã e Fundadora
+          </span>
+        </div>
+      </div>
+
+      <!-- TEXTO DA HISTÓRIA -->
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 bg-lally-rosa text-lally-malva px-3 py-1.5 rounded-full text-xs font-nunito font-bold">
+          <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+          <span>A história do ateliê</span>
+        </div>
+
+        <h2 class="font-quicksand font-bold text-2xl sm:text-3xl text-lally-grafite leading-tight">
+          Unindo a delicadeza do crochê à ternura da maternidade e da devoção.
+        </h2>
+
+        <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+          <p>
+            Olá! Sou a Lally Karina, mãe, católica e artesã apaixonada por fios. O Artes & Fios da Lally nasceu do desejo de transformar agulhas e novelos em companheiros de memórias para a vida toda.
+          </p>
+          <p>
+            Na confecção das peças sacras, encontro meu momento de oração e gratidão; nas naninhas e bichinhos, trago o olhar cuidadoso de uma mãe que entende a importância de materiais seguros, laváveis e afetivos. Cada cliente não é um número: é uma história que confia no meu trabalho manual.
+          </p>
+        </div>
+
+        <div>
+          <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Li%20sua%20hist%C3%B3ria%20no%20site%20e%20gostaria%20de%20falar%20com%20voc%C3%AA." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-lally-roxo hover:bg-purple-800 text-white font-nunito font-bold text-xs uppercase px-6 py-3.5 rounded-full transition-all shadow-md">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Falar com a Lally</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       8. SEÇÃO: DEPOIMENTOS DE CLIENTES
+       ====================================================================== -->
+  <section id="depoimentos" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Cabeçalho -->
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-lally-malva font-nunito font-bold text-xs uppercase tracking-wider block">
+          Histórias reais
+        </span>
+        <h2 class="font-quicksand font-bold text-2xl sm:text-3xl text-lally-grafite">
+          Carinho que chega e fica
+        </h2>
+        <p class="text-gray-600 text-sm">
+          Mensagens de quem recebeu uma peça criada especialmente para guardar afeto e memória.
+        </p>
+      </div>
+
+      <!-- Grade de Depoimentos -->
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- DEPOIMENTO 1 -->
+        <div class="bg-lally-algodao p-8 rounded-3xl border border-gray-100 space-y-4 shadow-soft">
+          <div class="flex text-amber-400 gap-1" aria-label="Avaliação 5 estrelas">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          </div>
+          <p class="text-sm font-quicksand font-semibold text-lally-grafite leading-relaxed">
+            “A naninha chegou ainda mais linda do que eu imaginava. Minha filha abraçou na mesma hora — dá para sentir o carinho em cada ponto.”
+          </p>
+          <div class="pt-4 border-t border-gray-200/60 flex items-center justify-between">
+            <div>
+              <span class="font-nunito font-bold text-sm block text-lally-grafite">Marina Alves</span>
+              <span class="text-xs text-gray-500 font-jakarta">Mamãe da Elisa • Belo Horizonte</span>
+            </div>
+            <i data-lucide="heart" class="w-4 h-4 text-lally-malva fill-lally-malva"></i>
+          </div>
+        </div>
+
+        <!-- DEPOIMENTO 2 -->
+        <div class="bg-lally-algodao p-8 rounded-3xl border border-gray-100 space-y-4 shadow-soft">
+          <div class="flex text-amber-400 gap-1" aria-label="Avaliação 5 estrelas">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          </div>
+          <p class="text-sm font-quicksand font-semibold text-lally-grafite leading-relaxed">
+            “Encomendei Nossa Senhora para o batizado da minha afilhada. A embalagem, o cheirinho e cada detalhe tornaram o presente inesquecível.”
+          </p>
+          <div class="pt-4 border-t border-gray-200/60 flex items-center justify-between">
+            <div>
+              <span class="font-nunito font-bold text-sm block text-lally-grafite">Clarissa Rocha</span>
+              <span class="text-xs text-gray-500 font-jakarta">Dinda da Helena • Curitiba</span>
+            </div>
+            <i data-lucide="heart" class="w-4 h-4 text-lally-malva fill-lally-malva"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       9. SEÇÃO: PERGUNTAS FREQUENTES (FAQ ACCORDION)
+       ====================================================================== -->
+  <section id="faq" class="py-16 md:py-24 bg-lally-algodao border-t border-gray-200/60">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Cabeçalho FAQ -->
+      <div class="text-center space-y-3">
+        <span class="text-lally-malva font-nunito font-bold text-xs uppercase tracking-wider block">
+          Tire suas dúvidas
+        </span>
+        <h2 class="font-quicksand font-bold text-2xl sm:text-3xl text-lally-grafite">
+          Perguntas Frequentes
+        </h2>
+        <p class="text-gray-600 text-sm">
+          Tudo o que você precisa saber sobre a confecção e compra dos amigurumis.
+        </p>
+      </div>
+
+      <!-- Lista de Perguntas (Acordeão Nativo) -->
+      <div class="space-y-4">
+        
+        <!-- PERGUNTA 1 -->
+        <details class="bg-white rounded-2xl border border-gray-200/80 p-5 shadow-sm transition-all" open>
+          <summary class="flex items-center justify-between font-quicksand font-bold text-base text-lally-grafite cursor-pointer">
+            <span>Qual é o prazo médio de confecção das encomendas?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-3 text-xs text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+            O prazo costuma variar entre 12 e 20 dias úteis, conforme o modelo e os detalhes personalizados. Antes de confirmar, envio uma previsão certinha para você.
+          </p>
+        </details>
+
+        <!-- PERGUNTA 2 -->
+        <details class="bg-white rounded-2xl border border-gray-200/80 p-5 shadow-sm transition-all">
+          <summary class="flex items-center justify-between font-quicksand font-bold text-base text-lally-grafite cursor-pointer">
+            <span>Como é feito o pagamento sem carrinho no site?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-3 text-xs text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+            Ao clicar no botão de WhatsApp da peça, alinhamos os detalhes e envio uma chave Pix ou link seguro para cartão de crédito. Aceitamos 50% de entrada para iniciar a confecção.
+          </p>
+        </details>
+
+        <!-- PERGUNTA 3 -->
+        <details class="bg-white rounded-2xl border border-gray-200/80 p-5 shadow-sm transition-all">
+          <summary class="flex items-center justify-between font-quicksand font-bold text-base text-lally-grafite cursor-pointer">
+            <span>As peças são seguras para bebês e recém-nascidos?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-3 text-xs text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+            Sim! Utilizo apenas fios antialérgicos 100% algodão e olhos/focinhos com trava de segurança interna, impossíveis de serem arrancados pelo bebê.
+          </p>
+        </details>
+
+        <!-- PERGUNTA 4 -->
+        <details class="bg-white rounded-2xl border border-gray-200/80 p-5 shadow-sm transition-all">
+          <summary class="flex items-center justify-between font-quicksand font-bold text-base text-lally-grafite cursor-pointer">
+            <span>Posso escolher outras cores para mantos e roupinhas?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-200"></i>
+          </summary>
+          <p class="mt-3 text-xs text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+            Com certeza! Você tem total liberdade para personalizar a paleta de cores para combinar com a decoração do quarto do bebê ou com sua devoção.
+          </p>
+        </details>
+
+      </div>
+
+      <!-- CHAMADA EXTRA DE AJUDA -->
+      <div class="text-center pt-2">
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Fiquei%20com%20uma%20d%C3%BAvida%20sobre%20as%20pe%C3%A7as." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-nunito font-semibold text-gray-600 hover:text-lally-malva transition-colors">
+          <i data-lucide="help-circle" class="w-4 h-4 text-lally-malva"></i>
+          <span>Ainda ficou com alguma dúvida? Me chame no WhatsApp.</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       10. SEÇÃO: CHAMADA FINAL (CONVITE ESPECIAL)
+       ====================================================================== -->
+  <section class="py-16 md:py-20 bg-lally-fundo">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-b from-purple-100 to-pink-50 border border-purple-200/70 rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-card">
+        <div class="w-14 h-14 bg-lally-roxo text-white rounded-full flex items-center justify-center mx-auto text-2xl shadow-md">
+          🎁
+        </div>
+        <h2 class="font-quicksand font-bold text-2xl sm:text-3xl text-lally-grafite">
+          Vamos tecer juntos uma lembrança eterna?
+        </h2>
+        <p class="text-gray-600 text-sm max-w-xl mx-auto leading-relaxed">
+          Clique no botão abaixo, me dê um olá e conte a sua ideia. Vou adorar planejar sua peça artesanal com todo carinho.
+        </p>
+        <div>
+          <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Lally!%20Gostaria%20de%20iniciar%20uma%20conversa%20sobre%20minha%20encomenda." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-lally-whatsapp hover:bg-emerald-600 text-white font-nunito font-bold text-sm uppercase px-8 py-4 rounded-full transition-all shadow-lg">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>Iniciar Conversa no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       11. RODAPÉ (FOOTER)
+       ====================================================================== -->
+  <footer class="bg-lally-footer text-white py-12 border-t border-purple-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      
+      <!-- Coluna 1: Identidade da Marca -->
+      <div class="space-y-3">
+        <div class="flex items-center gap-2 text-lally-rosa font-quicksand font-bold text-lg">
+          <span>✨</span>
+          <span>Artes & Fios da Lally</span>
+        </div>
+        <p class="text-xs text-gray-300 leading-relaxed">
+          Amigurumis afetivos e santinhos devocionais feitos à mão com fios nobres de alta qualidade, carinho e oração.
+        </p>
+      </div>
+
+      <!-- Coluna 2: Links Rápidos de Navegação -->
+      <div class="space-y-2 text-xs text-gray-300 font-jakarta">
+        <span class="block font-nunito font-bold text-lally-rosa uppercase tracking-wider mb-2">
+          Links Rápidos
+        </span>
+        <a href="#diferenciais" class="block hover:text-white transition-colors">Diferenciais e Cuidados</a>
+        <a href="#catalogo" class="block hover:text-white transition-colors">Catálogo de Modelos</a>
+        <a href="#como-funciona" class="block hover:text-white transition-colors">Como Encomendar</a>
+        <a href="#sobre" class="block hover:text-white transition-colors">Sobre a Artesã</a>
+        <a href="#faq" class="block hover:text-white transition-colors">Dúvidas Frequentes</a>
+      </div>
+
+      <!-- Coluna 3: Contato & Informações -->
+      <div class="space-y-2 text-xs text-gray-300 font-jakarta">
+        <span class="block font-nunito font-bold text-lally-rosa uppercase tracking-wider mb-2">
+          Atendimento & Envio
+        </span>
+        <p class="flex items-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+          <span>Atendimento direto pelo WhatsApp</span>
+        </p>
+        <p class="flex items-center gap-2">
+          <i data-lucide="truck" class="w-4 h-4 text-purple-300"></i>
+          <span>Envios para todo o território nacional</span>
+        </p>
+        <p class="pt-4 text-[10px] text-gray-400">
+          © 2026 Artes & Fios da Lally. Todos os direitos reservados.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       SCRIPTS JAVASCRIPT EXTERNOS
+       ====================================================================== -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

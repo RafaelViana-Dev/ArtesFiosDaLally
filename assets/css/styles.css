@@ -1,0 +1,50 @@
+/* ==========================================================================
+   ARTE & FIOS DA LALLY - ESTILOS COMPLEMENTARES
+   Paleta e fontes baseadas no Figma (R-Design-ArteFiosDaLally)
+   ========================================================================== */
+
+/* Suavização de rolagem e fontes */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Customização da seleção de texto */
+::selection {
+  background-color: #F8EDF2;
+  color: #944265;
+}
+
+/* Transições suaves globais para cards e botões interativos */
+.card-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -10px rgba(106, 58, 129, 0.15);
+}
+
+/* Efeito de rotação suave no ícone de accordion (FAQ) */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  list-style: none;
+}
+
+details[open] .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Efeito de badge pulsante discreto no Hero */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+
+.pulse-badge {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
